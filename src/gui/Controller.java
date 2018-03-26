@@ -3,6 +3,10 @@ package gui;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import lib.tokenizing.Normalizer;
+import lib.tokenizing.TokenTypeJava;
+import lib.tokenizing.Tokenizer;
+
+import java.util.ArrayList;
 
 public class Controller {
 
@@ -22,9 +26,13 @@ public class Controller {
     private void analyze(){
 
         String inputCode = textArea1.getText();
-        Normalizer normalizer = new Normalizer(inputCode);
-        String outputCode = normalizer.getNormalizedText();
-        textArea2.setText(outputCode);
+        Tokenizer tokenizer = new Tokenizer(inputCode);
+        ArrayList<TokenTypeJava> tokenList  = tokenizer.getTokenizedText();
+        StringBuffer outputCode = new StringBuffer();
+        for (TokenTypeJava t : tokenList){
+            outputCode.append(t + "\n");
+        }
+        textArea2.setText(outputCode.toString());
 
     }
 
