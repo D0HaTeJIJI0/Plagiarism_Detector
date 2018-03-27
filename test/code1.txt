@@ -1,0 +1,6 @@
+if (a>=b) {
+         // Comment1’
+c=d+b;
+        d=d+1;}
+else  // Comment2’
+c=d-a;

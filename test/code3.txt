@@ -1,0 +1,6 @@
+if (a >= b) {
+        c = d + b; // Comment1
+        e = 1; // Новое выражение
+d = d + 1; }
+else
+c = d - a; //Comment2

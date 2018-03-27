@@ -1,0 +1,7 @@
+if (m >= n)
+{ // Comment1’
+    y = x + n;
+    x = x + 5; //Comment3
+    }
+else
+    y = x - m; //Comment2’
