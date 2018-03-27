@@ -13,5 +13,11 @@ public enum TokenTypeJava {
     LOG_OP,
     NUMBER;
 
+    public boolean equals(TokenTypeJava ttj){
+
+        return this.toString().equals(ttj.toString());
+
+    }
+
 
 }

@@ -53,7 +53,7 @@ public class Tokenizer {
 
     }
 
-    private Matcher[] initMatchers(){
+    private Matcher[] initMatchers(String inputText){
 
         Matcher [] matchers = new Matcher[NUM_OF_TOKENS];
        for (int i = 0; i < NUM_OF_TOKENS; i++){
@@ -63,12 +63,12 @@ public class Tokenizer {
 
     }
 
-    public ArrayList<TokenTypeJava> getTokenizedText(){
+    public ArrayList<TokenTypeJava> getTokenizedList(){
 
         Normalizer normalizer = new Normalizer(inputText);
         StringBuffer outputText = new StringBuffer(normalizer.getNormalizedText());
         boolean f;
-        Matcher [] matchers = initMatchers();
+        Matcher [] matchers = initMatchers(outputText.toString());
         ArrayList<TokenTypeJava> tokenList = new ArrayList<>();
         int minPos, pos, minLen, len, begPos = 0;
         TokenTypeJava minTokenType;
