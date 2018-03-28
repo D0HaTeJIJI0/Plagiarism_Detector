@@ -6,7 +6,7 @@ import static java.lang.Math.min;
 
 public class Heskel {
 
-    private static final int K_GRAMM = 3;
+    private static final int K_GRAMM = 5;
     private static boolean flags_code1[], flags_code2[];
 
     public static double detect(ArrayList<TokenTypeJava> code1, ArrayList<TokenTypeJava> code2){
