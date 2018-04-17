@@ -8,6 +8,7 @@ public class RegExNormalizer {
     public static final String MANY_SPACES = " {2,}";
     public static final String COMMENT1 = "\\/\\/(.)*";
     public static final String COMMENT2 = "\\/\\*(.|\\n)*\\*\\/";
+    public static final String EMPTY_OPEPRATOR = ";";
 
     public static final String REPLACEMENT = " ";
 

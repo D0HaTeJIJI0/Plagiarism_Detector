@@ -7,7 +7,7 @@ import static lib.tokenizing.RegExNormalizer.*;
 public class Normalizer {
 
     private String inputText;
-    Pattern pTab, pBigLetters, pManySpaces, pNewLine, pComment1, pComment2;
+    Pattern pTab, pBigLetters, pManySpaces, pNewLine, pComment1, pComment2, pEmptyOperator;
 
     private final int OFFSET = ((int) 'a') - ((int) 'A');
 
@@ -33,6 +33,7 @@ public class Normalizer {
         pNewLine = Pattern.compile(NEW_LINE);
         pComment1 = Pattern.compile(COMMENT1);
         pComment2 = Pattern.compile(COMMENT2);
+        pEmptyOperator = Pattern.compile(EMPTY_OPEPRATOR);
 
     }
 
@@ -54,8 +55,9 @@ public class Normalizer {
         outputText = normalize(pComment1, inputText, REPLACEMENT);
         outputText = normalize(pComment2, outputText.toString(), REPLACEMENT);
         outputText = normalize(pTab, outputText.toString(), REPLACEMENT);
-        outputText = normalize(pManySpaces, outputText.toString(), REPLACEMENT);
+        outputText = normalize(pEmptyOperator, outputText.toString(), REPLACEMENT);
         outputText = normalize(pNewLine, outputText.toString(), REPLACEMENT);
+        outputText = normalize(pManySpaces, outputText.toString(), REPLACEMENT);
         Matcher mBigLetters = pBigLetters.matcher(outputText);
         StringBuffer result = new StringBuffer();
         char letter[];
