@@ -14,7 +14,7 @@ public class Viewer extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Heskel_Detector");
+        primaryStage.setTitle("Plagiarism Detector");
         primaryStage.setScene(new Scene(root, 600, 600));
         primaryStage.setResizable(false);
         primaryStage.show();
